@@ -1,0 +1,13 @@
+//Finding Directory that Contains the Public Key//
+1. Move to Directory where pem key is stored
+2. Open the Terminal
+-------------------------------------------------------------
+//Reseting Permission to Read Only to use Public Key for SSH Access//
+3. Type Command
+sudo chmod 400 appletest.pem
+-------------------------------------------------------------
+//Adding Public Key & Connecting to Private EC2/VM
+4. Type Command
+ssh-add -K appletest.pem
+ssh -A ubuntu@ip_addr(SSHing into Bastion)
+ssh ubuntu@ip_addr(SSHing into Private EC2/VM Instance)
